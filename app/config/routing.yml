@@ -1,1 +1,5 @@
+carambola:
+    resource: "@CarambolaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
