@@ -5,7 +5,7 @@ namespace CarambolaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CarambolaBundle\Entity\Repository\CarRepository")
  * @ORM\Table(name="cars")
  */
 class Car
