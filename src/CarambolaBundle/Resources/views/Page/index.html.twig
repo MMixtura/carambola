@@ -1,6 +1,21 @@
 {% extends 'CarambolaBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1>Header</h1>
-    <p>Homepage content goes here</p>
+    {% for car in cars %}
+        <article id="car">
+            <header>
+                <h2><a href="{{ path('CarambolaBundle_car_show', { 'id': car.id }) }}">{{ car.model }}</a></h2>
+            </header>
+
+            <img src="{{ asset(['bundles/carambola/images/', car.image]|join) }}" />
+
+            <div id="data">
+                <p id="class"><b>Car class: </b><a href="#">{{ car.class }}</a></p>
+                <p id="price"><b>Price per day: </b>{{ car.price }}</p>
+            </div>
+            <div id="line"></div>
+        </article>
+    {% else %}
+        <p>There are no cars to rent</p>
+    {% endfor %}
 {% endblock %}

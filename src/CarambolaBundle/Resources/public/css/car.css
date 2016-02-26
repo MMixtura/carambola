@@ -3,15 +3,17 @@
 }
 #car img {
     width: 190px;
+    height: 100px;
     float: left;
     padding: 5px;
-    border: 1px solid #6b6b6b;
+    border: 1px dotted #6b6b6b;
     margin: 0 10px 10px 0;
 }
 
 #car img.large {
     width: 300px;
     min-height: 165px;
+    border: 1px solid #6b6b6b;
 }
 
 #car div p {
@@ -21,4 +23,14 @@
 
 #car div p b {
     font-weight: bold;
+}
+
+#car div#data {
+    text-align: left;
+    line-height: 1.2em;
+}
+
+#car div#line {
+    clear: both;
+    border-bottom: 1px ridge #6b6b6b;
 }
