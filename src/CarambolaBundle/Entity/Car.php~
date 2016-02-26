@@ -1,0 +1,42 @@
+<?php
+
+namespace CarambolaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="cars")
+ */
+class Car
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $model;
+
+    /**
+     * @ORM\Column(type="string", length=1)
+     */
+    protected $class;
+
+    /**
+     * @ORM\Column(type="decimal", scale=2)
+     */
+    protected $price;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $image;
+
+    protected $rental;
+    
+}
