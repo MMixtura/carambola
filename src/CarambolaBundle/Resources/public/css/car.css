@@ -1,0 +1,24 @@
+#car {
+    margin-bottom: 20px;
+}
+#car img {
+    width: 190px;
+    float: left;
+    padding: 5px;
+    border: 1px solid #6b6b6b;
+    margin: 0 10px 10px 0;
+}
+
+#car img.large {
+    width: 300px;
+    min-height: 165px;
+}
+
+#car div p {
+    margin-bottom: 5px;
+    line-height: 1.2em;
+}
+
+#car div p b {
+    font-weight: bold;
+}

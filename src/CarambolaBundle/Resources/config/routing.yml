@@ -3,3 +3,10 @@ CarambolaBundle_homepage:
     defaults: { _controller: CarambolaBundle:Page:index }
     requirements:
         _method:  GET
+
+CarambolaBundle_car_show:
+    pattern:  /{id}
+    defaults: { _controller: CarambolaBundle:Car:show }
+    requirements:
+        _method:  GET
+        id: \d+

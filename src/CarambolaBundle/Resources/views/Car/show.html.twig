@@ -1,0 +1,14 @@
+{% extends 'CarambolaBundle::layout.html.twig' %}
+
+{% block body %}
+    <article id="car">
+        <header>
+            <h2>{{ car.model }}</h2>
+        </header>
+        <img src="{{ asset(['bundles/carambola/images/', car.image]|join) }}" alt="{{ car.model }} image not found" class="large" />
+        <div>
+            <p id="class"><b>Car class: </b><a href="#">{{ car.class }}</a></p>
+            <p id="price"><b>Price per day: </b>{{ car.price }}</p>
+        </div>
+    </article>
+{% endblock %}
