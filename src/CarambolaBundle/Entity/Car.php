@@ -37,6 +37,9 @@ class Car
      */
     protected $image;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Rental", mappedBy="car")
+     */
     protected $rental;
     
 
@@ -141,4 +144,33 @@ class Car
     {
         return $this->image;
     }
+
+    /**
+     * Set rental
+     *
+     * @param \CarambolaBundle\Entity\Rental $rental
+     * @return Car
+     */
+    public function setRental(\CarambolaBundle\Entity\Rental $rental = null)
+    {
+        $this->rental = $rental;
+
+        return $this;
+    }
+
+    /**
+     * Get rental
+     *
+     * @return \CarambolaBundle\Entity\Rental 
+     */
+    public function getRental()
+    {
+        return $this->rental;
+    }
+
+    public function __toString()
+    {
+        return $this->getModel();
+    }
+
 }

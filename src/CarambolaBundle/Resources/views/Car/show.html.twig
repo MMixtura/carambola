@@ -11,4 +11,8 @@
             <p id="price"><b>Price per day: </b>{{ car.price }}</p>
         </div>
     </article>
+
+    <section id="rental">
+        {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
+    </section>
 {% endblock %}

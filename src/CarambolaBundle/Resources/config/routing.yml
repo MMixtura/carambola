@@ -10,3 +10,10 @@ CarambolaBundle_car_show:
     requirements:
         _method:  GET
         id: \d+
+
+CarambolaBundle_rental_reserve:
+    pattern:  /reserve/{car_id}
+    defaults: { _controller: CarambolaBundle:Rental:reserve}
+    requirements:
+        _method:  POST
+        car_id: \d+

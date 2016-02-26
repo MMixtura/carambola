@@ -13,6 +13,11 @@
                 <p id="class"><b>Car class: </b><a href="#">{{ car.class }}</a></p>
                 <p id="price"><b>Price per day: </b>{{ car.price }}</p>
             </div>
+
+            <section class="reservation">
+                {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
+            </section>
+
             <div id="line"></div>
         </article>
     {% else %}

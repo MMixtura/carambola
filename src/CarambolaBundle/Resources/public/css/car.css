@@ -6,7 +6,6 @@
     height: 100px;
     float: left;
     padding: 5px;
-    border: 1px dotted #6b6b6b;
     margin: 0 10px 10px 0;
 }
 
@@ -33,4 +32,47 @@
 #car div#line {
     clear: both;
     border-bottom: 1px ridge #6b6b6b;
+}
+
+form.resform {
+    font-size: 16px;
+}
+
+
+form.resform div#rental div {
+    clear: left;
+    margin-bottom: 10px;
+}
+
+form.resform div#rental div label {
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+form.resform div#rental div input,
+form.resform div#rental div select
+{
+    width: 300px;
+    line-height: 26px;
+    font-size: 20px;
+    min-height: 26px;
+    border: 1px solid #FFA200;
+}
+
+form.resform p {
+    margin-left: 110px;
+    width: 300px;
+    font-size: 20px;
+    min-height: 26px;
+}
+
+form.resform p input {
+    width: 300px;
+    line-height: 26px;
+    min-height: 26px;
 }

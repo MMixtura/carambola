@@ -37,6 +37,9 @@ class Car
      */
     protected $image;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Rental", mappedBy="car")
+     */
     protected $rental;
     
 

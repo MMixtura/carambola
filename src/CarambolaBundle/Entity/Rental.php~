@@ -1,0 +1,35 @@
+<?php
+
+namespace CarambolaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="CarambolaBundle\Entity\Repository\RentalRepository")
+ * @ORM\Table(name="rentals")
+ */
+class Rental
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Car", inversedBy="rental")
+     * @ORM\JoinColumn(name="car_id", referencedColumnName="id")
+     */
+    protected $car;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    protected $status;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $daysNo;
+}
