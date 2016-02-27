@@ -168,6 +168,11 @@ class Car
         return $this->rental;
     }
 
+    public function __construct()
+    {
+        $this->setRental();
+    }
+
     public function __toString()
     {
         return $this->getModel();

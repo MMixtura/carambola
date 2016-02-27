@@ -2,24 +2,26 @@
 
 {% block body %}
     {% for car in cars %}
-        <article id="car">
-            <header>
-                <h2><a href="{{ path('CarambolaBundle_car_show', { 'id': car.id }) }}">{{ car.model }}</a></h2>
-            </header>
+        {% if car.rental == null %}
+            <article id="car">
+                <header>
+                    <h2><a href="{{ path('CarambolaBundle_car_show', { 'id': car.id }) }}">{{ car.model }}</a></h2>
+                </header>
 
-            <img src="{{ asset(['bundles/carambola/images/', car.image]|join) }}" />
+                <img src="{{ asset(['bundles/carambola/images/', car.image]|join) }}" />
 
-            <div id="data">
-                <p id="class"><b>Car class: </b><a href="#">{{ car.class }}</a></p>
-                <p id="price"><b>Price per day: </b>{{ car.price }}</p>
-            </div>
+                <div id="data">
+                    <p><b>Car class: </b><a href="#">{{ car.class }}</a></p>
+                    <p><b>Price per day: </b>{{ car.price }}</p>
+                </div>
 
-            <section class="reservation">
-                {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
-            </section>
+                <section class="reservation">
+                    {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
+                </section>
 
-            <div id="line"></div>
-        </article>
+                <div id="line"></div>
+            </article>
+        {% endif %}
     {% else %}
         <p>There are no cars to rent</p>
     {% endfor %}

@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class CarRepository extends EntityRepository
 {
-    public function getCarsForRental()
+    public function getAllCars()
     {
         $qb = $this->createQueryBuilder('c')
             ->select('c')

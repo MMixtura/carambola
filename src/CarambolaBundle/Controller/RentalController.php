@@ -16,9 +16,37 @@ class RentalController extends Controller
         $rental->setCar($car);
         $form   = $this->createForm(new RentalType(), $rental);
 
-        return $this->render('CarambolaBundle:Rental:reserve.html.twig', array(
+        return $this->render('CarambolaBundle:Rental:form.html.twig', array(
             'rental' => $rental,
             'form'   => $form->createView()
+        ));
+    }
+
+    public function reserveAction($car_id)
+    {
+        $car = $this->getCar($car_id);
+
+        $rental = new Rental();
+        $rental->setCar($car);
+        $rental->setStatus('reserved');
+        $request = $this->get('request_stack')->getCurrentRequest();;
+        $form    = $this->createForm(new RentalType(), $rental);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()
+                ->getManager();
+            $em->persist($rental);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('CarambolaBundle_car_show', array(
+                    'id' => $rental->getCar()->getId()))
+            );
+        }
+
+        return $this->render('CarambolaBundle:Rental:reserve.html.twig', array(
+            'rental' => $rental,
+            'form'    => $form->createView()
         ));
     }
 

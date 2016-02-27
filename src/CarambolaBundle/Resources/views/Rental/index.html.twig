@@ -1,0 +1,7 @@
+{% for r in rental %}
+    <section class="rent" >
+        This car is currently {{ car.rental.status }} for {{ car.rental.daysNo }} days.
+    </section>
+{% else %}
+    {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
+{% endfor %}

@@ -12,7 +12,7 @@ class PageController extends Controller
             ->getManager();
 
         $cars = $em->getRepository('CarambolaBundle:Car')
-            ->getCarsForRental();
+            ->getAllCars();
 
         return $this->render('CarambolaBundle:Page:index.html.twig', array(
             'cars' => $cars

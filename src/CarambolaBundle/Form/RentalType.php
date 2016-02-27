@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class RentalType extends AbstractType
 {
@@ -16,7 +17,7 @@ class RentalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('daysNo', 'number', array(
+            ->add('daysNo', IntegerType::class, array(
                 'label' => 'No. of days'
             ))
             ->add('car', EntityType::class, array(

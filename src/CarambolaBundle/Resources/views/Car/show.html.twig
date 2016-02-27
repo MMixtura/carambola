@@ -13,6 +13,6 @@
     </article>
 
     <section id="rental">
-        {% render controller('CarambolaBundle:Rental:form', { 'car_id': car.id }) %}
+        {% include 'CarambolaBundle:Rental:index.html.twig' with { 'rental': rental } %}
     </section>
 {% endblock %}

@@ -16,8 +16,12 @@ class CarController extends Controller
             throw $this->createNotFoundException('Car not found');
         }
 
+        $rental = $em->getRepository('CarambolaBundle:Rental')
+            ->getRental($car->getId());
+
         return $this->render('CarambolaBundle:Car:show.html.twig', array(
-            'car' => $car
+            'car' => $car,
+            'rental' => $rental
         ));
     }
 }

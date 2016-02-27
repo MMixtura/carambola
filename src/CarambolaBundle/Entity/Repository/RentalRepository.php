@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class RentalRepository extends EntityRepository
 {
+    public function getRental($carId)
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->select('r')
+            ->where('r.car = :car_id')
+            ->setParameter('car_id', $carId);
+
+        return $qb->getQuery()
+            ->getResult();
+    }
 }

@@ -1,6 +1,8 @@
-<form class="resform" action="{{ path('CarambolaBundle_rental_reserve', { 'car_id' : rental.car.id } ) }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <input type="submit" value="Reserve the car">
-    </p>
-</form>
+{% extends 'Carambola::layout.html.twig' %}
+
+{% block title %}Reserve the car{% endblock%}
+
+{% block body %}
+    <h1>Reserve the car "{{ rental.car.model }}"</h1>
+    {% include 'CarambolaBundle:Rental:form.html.twig' with { 'form': form } %}
+{% endblock %}
